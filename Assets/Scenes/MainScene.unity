@@ -3463,6 +3463,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &617037257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2455524122006084268, guid: ea2976f75ca106f48a6a48fffa9f0deb, type: 3}
+  m_PrefabInstance: {fileID: 2455524121361770884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &617037263
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617037257}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b77822e0485373d40b5beb92e9a5e728, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &969906439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3649,6 +3674,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7061677069560603182, guid: a260776a0c05e8548b036c495adc3f79, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 66f6897b36041a84499f4c647cff4c37, type: 2}
     - target: {fileID: 6913780402395874193, guid: a260776a0c05e8548b036c495adc3f79, type: 3}
       propertyPath: m_Name
       value: Bot

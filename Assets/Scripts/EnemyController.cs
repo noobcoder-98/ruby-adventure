@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     float timer;
     int direction = 1;
 
+    bool broken = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,8 @@ public class EnemyController : MonoBehaviour
     }
 
     private void Update() {
+        if (!broken) return;
+
         timer -= Time.deltaTime;
         if (timer < 0) {
             direction = -direction;
@@ -31,6 +34,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!broken) return;
+
         Vector2 position = rigidbody2D.position;
         if (vertical) {
             position.y = position.y + Time.deltaTime * speed * direction;
@@ -50,5 +55,11 @@ public class EnemyController : MonoBehaviour
         if (player != null) {
             player.ChangeHealth(-1);
         }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        rigidbody2D.simulated = false;
     }
 }

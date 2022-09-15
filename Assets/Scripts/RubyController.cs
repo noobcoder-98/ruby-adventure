@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RubyController : MonoBehaviour
 {
+    public AudioClip throwCog;
+    public AudioSource audioSource;
     public GameObject projectilePrefab;
     public float speed = 3.0f;
 
@@ -28,6 +30,8 @@ public class RubyController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        audioSource = GetComponent<AudioSource>();
+        Debug.Log(audioSource);
     }
 
     // Update is called once per frame
@@ -99,5 +103,10 @@ public class RubyController : MonoBehaviour
         projectile.Launch(lookDirection, 300);
 
         animator.SetTrigger("Launch");
+        PlaySound(throwCog);
+    }
+
+    public void PlaySound(AudioClip clip) {
+        audioSource.PlayOneShot(clip);
     }
 }

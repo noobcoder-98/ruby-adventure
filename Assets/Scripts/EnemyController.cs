@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public AudioClip hitForEnemy;
     public float speed = 2.0f;
     public float changeTime = 3.0f;
     public bool vertical;
@@ -55,6 +56,7 @@ public class EnemyController : MonoBehaviour
         RubyController player = other.gameObject.GetComponent<RubyController>();
         if (player != null) {
             player.ChangeHealth(-1);
+            player.PlaySound(hitForEnemy);
         }
     }
 
